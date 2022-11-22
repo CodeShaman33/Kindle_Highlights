@@ -1,3 +1,7 @@
 git push -u origin master
 
 env/Scripts/activate.bat
+
+python manage.py makemigrations
+
+python manage.py migrate

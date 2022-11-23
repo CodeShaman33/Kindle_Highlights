@@ -5,6 +5,8 @@ from django.core.files.storage import FileSystemStorage
 from .models import Book, Document, HighLight
 '''another modules'''
 from .processing_data import processing_data
+'''forms'''
+from .forms import NoteForm
 
 # Create your views here.
 
@@ -49,3 +51,19 @@ def process(request):
     context['lines'] = content_list[0]
 
     return render(request, 'knowledge/index.html')
+
+def create_note(request):
+
+    if request.method == 'POST':
+        form = NoteForm(request.POST)
+
+        if form.is_valid():
+            note = form.cleaned_data['note']
+            print(note)
+
+        return render(request, 'knowledge/upload.html')
+
+    else:
+        form = NoteForm()
+
+    return render(request, 'knowledge/create.html', {'form': form})

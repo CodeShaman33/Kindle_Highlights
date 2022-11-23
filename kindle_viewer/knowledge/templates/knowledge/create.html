@@ -1,0 +1,18 @@
+
+
+{% block content %}
+
+<form action="/create/" method="post">
+
+    {% csrf_token %}
+    {{ form }}
+
+    <button type="submit" name="save">Create New</button>
+
+</form>
+
+
+
+
+
+{% endblock  %}

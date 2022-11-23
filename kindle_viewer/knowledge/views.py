@@ -10,7 +10,7 @@ from .processing_data import processing_data
 
 '''homepage'''
 def index(request):
-    return render(request, 'kindle/index.html')
+    return render(request, 'knowledge/index.html')
 
 '''this is a page where user can upload individual kindle file'''
 def upload(request):

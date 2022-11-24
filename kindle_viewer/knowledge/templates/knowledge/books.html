@@ -1,0 +1,35 @@
+{% extends "knowledge/base.html" %}
+
+
+<!doctype html>
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+{% block content %}
+<div id="container">
+        {% for book in books %}
+    <div id="book">
+        <p>
+            {{ book }}
+        </p>
+    </div>
+    {% empty %}
+    <li>
+        <h3>
+            Nie został jeszcze dodany żaden temat
+        </h3>
+    </li>
+    {% endfor %}
+</div>
+
+
+
+{% endblock content %}
+</body>
+</html>
+
+
+

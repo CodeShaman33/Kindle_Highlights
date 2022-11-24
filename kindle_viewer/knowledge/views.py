@@ -41,6 +41,8 @@ def process(request):
             book = Book.objects.create(title=str(key))
             book.save()
 
+    '''every key in function below is individual book title, and for that key the function assigns new highlights, 
+    but first it checks if the highlight already exist in database'''
     for key in content_list[0]:
         book = Book.objects.get(title=str(key))
         for item in content_list[1][key]:
@@ -52,8 +54,14 @@ def process(request):
 
     return render(request, 'knowledge/index.html')
 
+'''This function displays all books in database as interactive elements'''
+def books(request):
+    books = Book.objects.all()
+    context = {'books': books}
+    return render(request, 'knowledge/books.html', context)
+
 def create_note(request):
-    a = 1
+
     if request.method == 'POST':
         form = NoteForm(request.POST)
 

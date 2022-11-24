@@ -1,1 +1,45 @@
-ddd
+<!doctype html>
+<html lang="en">
+{% load bootstrap4 %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notes Viewer</title>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+
+</head>
+
+
+<body>
+<nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
+    <a class="navbar-brand" href="{% url 'knowledge:index' %}">Notes Viewer</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span></button>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'knowledge:upload' %}">Upload</a>
+            </li>
+            <li class="nav-item">
+                <a class='nav-link' href="{% url 'knowledge:books' %}">books</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+
+        </ul>
+    </div>
+</nav>
+
+<main role="main" class="container">
+    {% block content %}{% endblock content %}
+</main>
+</body>
+</html>

@@ -13,7 +13,7 @@
         {% for book in books %}
     <div id="book">
         <p>
-            {{ book }}
+            <a href="{% url 'knowledge:book' book.id %}">{{ book }}</a>
         </p>
     </div>
     {% empty %}

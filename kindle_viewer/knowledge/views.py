@@ -60,6 +60,15 @@ def books(request):
     context = {'books': books}
     return render(request, 'knowledge/books.html', context)
 
+'''this function create a page with all highlight associated with book user choosed'''
+def book(request, book_id):
+    book = Book.objects.get(id=book_id)
+    entries = HighLight.objects.filter(book=book)
+    context = {'book_name': book.title, 'entries': entries}
+    return render(request, 'knowledge//book.html', context)
+
+
+
 def create_note(request):
 
     if request.method == 'POST':

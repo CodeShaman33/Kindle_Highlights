@@ -53,7 +53,7 @@ def process(request):
     return render(request, 'knowledge/index.html')
 
 def create_note(request):
-
+    a = 1
     if request.method == 'POST':
         form = NoteForm(request.POST)
 

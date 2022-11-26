@@ -5,3 +5,4 @@ from .models import Book, HighLight, Document
 admin.site.register(Book)
 admin.site.register(Document)
 admin.site.register(HighLight)
+

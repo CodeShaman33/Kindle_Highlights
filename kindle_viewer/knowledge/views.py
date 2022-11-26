@@ -69,18 +69,25 @@ def book(request, book_id):
 
 
 
-def create_note(request):
+
+def create(request, entry_id):
+    highlight = HighLight.objects.get(id=entry_id)
 
     if request.method == 'POST':
-        form = NoteForm(request.POST)
+        form = NoteForm(data=request.POST, instance=highlight)
 
         if form.is_valid():
-            note = form.cleaned_data['note']
-            print(note)
-
-        return render(request, 'knowledge/upload.html')
+            form.save()
+            return redirect('knowledge:books')
 
     else:
-        form = NoteForm()
+        form = NoteForm(instance=highlight)
 
     return render(request, 'knowledge/create.html', {'form': form})
+
+def notes(request, entry_id):
+    highlight = HighLight.objects.get(id=entry_id)
+    note = highlight.note
+    thought = highlight.thought
+    context = {'note': note, 'thought': thought}
+    return render(request, 'knowledge:notes', context)

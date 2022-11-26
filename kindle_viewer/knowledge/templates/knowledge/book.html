@@ -24,7 +24,10 @@
             {{ entry.id }}
         </h2>
         <p>
-            dodaj wpis
+            <a href="{% url 'knowledge:create' entry.id %}">Add your thought</a>
+            <a href="{% url 'knowledge:notes' entry.id %}">See your Thoughts</a>
+
+
         </p>
         <p>
 

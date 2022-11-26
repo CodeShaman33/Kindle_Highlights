@@ -1,7 +1,10 @@
 from django import forms
+from .models import HighLight
 
 
+class NoteForm(forms.ModelForm):
 
-class NoteForm(forms.Form):
-
-    note = forms.CharField(label='place your thoughts', max_length=1000)
+    class Meta:
+        model = HighLight
+        fields = ['thought']
+        labels = {'note': 'place your thought'}

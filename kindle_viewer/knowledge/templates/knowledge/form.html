@@ -1,0 +1,15 @@
+{% extends "knowledge/base.html" %}
+
+
+{% block content %}
+
+<form action="{% url 'knowledge:form' entry.id %}" method="post">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+<button name="submit">Zapisz zmiany</button>
+
+</form>
+
+{% endblock content %}

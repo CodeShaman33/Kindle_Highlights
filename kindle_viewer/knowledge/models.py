@@ -24,6 +24,8 @@ class HighLight(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     note = models.TextField()
     date_added = models.TextField()
+    thought = models.TextField(blank=True)
 
     def __str__(self):
         return self.note
+

@@ -69,7 +69,8 @@ def book(request, book_id):
 
 
 
-
+'''this function create a blank form which user can fill with his thoughts about specyfic highlight
+It uses existing instance of a model'''
 def create(request, entry_id):
     highlight = HighLight.objects.get(id=entry_id)
 
@@ -85,9 +86,16 @@ def create(request, entry_id):
 
     return render(request, 'knowledge/create.html', {'form': form})
 
+'''This function diplays thoughts associated with specyfic highlight.'''
 def notes(request, entry_id):
     highlight = HighLight.objects.get(id=entry_id)
     note = highlight.note
     thought = highlight.thought
+    print(note, thought)
     context = {'note': note, 'thought': thought}
-    return render(request, 'knowledge:notes', context)
+    return render(request, 'knowledge//notes.html', {'note': note, 'thought': thought})
+
+'''test function to  render test page'''
+def test(request):
+
+    return render(request, 'knowledge/base.html')

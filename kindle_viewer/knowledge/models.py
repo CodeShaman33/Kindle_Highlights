@@ -5,7 +5,8 @@ from django.db import models
 '''In this module are models that stores:
     -- book titles
     -- Highlights
-    -- Notes made by user, associated with individual highlights'''
+    -- Notes made by user, associated with individual highlights
+    -- It is still test version of the app so there are no arguments inside model fields yet'''
 
 '''This model is made to store .txt documents extracted from kindle device and uploaded onto database'''
 class Document(models.Model):

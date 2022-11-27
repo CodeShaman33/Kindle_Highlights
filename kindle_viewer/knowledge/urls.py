@@ -12,6 +12,7 @@ urlpatterns = [
     path('books/', views.books, name='books'),
     path('book/(<int:book_id>)/', views.book, name='book'),
     path('create/(<int:entry_id>)/', views.create, name='create'),
-    path('notes/', views.notes, name='notes')
+    path('notes/(<int:entry_id>)/', views.notes, name='notes'),
+    path('test/', views.test, name='test')
 
 ]

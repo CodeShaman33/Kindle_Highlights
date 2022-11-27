@@ -46,6 +46,9 @@ def processing_data(file):
                 final_dateAdded = final_dateAdded + str(element) + ' '
             booksDict[str(item)].append((content_list[index + 3], final_dateAdded)) #for each highlight creates a tuple with the note and date
 
+    '''As an output function in this module returns list which contains 2 elements:
+        -- 1 element: keys of main dictionary which are book titles
+        -- 2 element: whole dictionary'''
     return [booksDict.keys(), booksDict]
 
 

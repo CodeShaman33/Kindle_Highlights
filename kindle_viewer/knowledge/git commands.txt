@@ -1,3 +1,6 @@
+
+THIS IS  NOTHING MORE THAN BASIC GIT COMMANDS
+
 git push -u origin master
 
 env/Scripts/activate.bat

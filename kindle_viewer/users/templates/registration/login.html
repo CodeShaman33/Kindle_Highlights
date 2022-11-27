@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "knowledge/base.html" %}
+{% load bootstrap4 %}
 
-</body>
-</html>
+{% block content %}
+
+<form action="{% url 'users:login' %}" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button name="submit" class="btn btn-primary">Login</button>
+    {% endbuttons %}
+    <input type="hidden" name="next"
+           value="{% url 'knowledge:index' %}">
+</form>
+
+
+{% endblock content %}

@@ -1,4 +1,6 @@
 from django.db import models
+'''authorization '''
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -12,10 +14,13 @@ from django.db import models
 class Document(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
     file = models.FileField()
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
 '''This model stores Books as titles which will be primary keys for highlights in model below '''
 class Book(models.Model):
     title = models.CharField(max_length=600, null=True)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.title

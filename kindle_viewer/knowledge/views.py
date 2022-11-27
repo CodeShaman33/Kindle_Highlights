@@ -7,6 +7,8 @@ from .models import Book, Document, HighLight
 from .processing_data import processing_data
 '''forms'''
 from .forms import NoteForm
+'''decorators'''
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -15,6 +17,7 @@ def index(request):
     return render(request, 'knowledge/index.html')
 
 '''this is a page where user can upload individual kindle file'''
+@login_required
 def upload(request):
     context = {}
     if request.method == 'POST':
@@ -30,6 +33,7 @@ various items in tables:
     -- book (it works as primary key for highlight table model)
     -- highlights 
     -- notes '''
+@login_required
 def process(request):
     context = {}
     #creating object which is a dictionary where the keys are book titles, and the items are distinct notes
@@ -55,12 +59,14 @@ def process(request):
     return render(request, 'knowledge/index.html')
 
 '''This function displays all books in database as interactive elements'''
+@login_required
 def books(request):
     books = Book.objects.all()
     context = {'books': books}
     return render(request, 'knowledge/books.html', context)
 
 '''this function create a page with all highlight associated with book user choosed'''
+@login_required
 def book(request, book_id):
     book = Book.objects.get(id=book_id)
     entries = HighLight.objects.filter(book=book)
@@ -71,6 +77,7 @@ def book(request, book_id):
 
 '''this function create a blank form which user can fill with his thoughts about specyfic highlight
 It uses existing instance of a model'''
+@login_required
 def create(request, entry_id):
     highlight = HighLight.objects.get(id=entry_id)
 
@@ -87,6 +94,7 @@ def create(request, entry_id):
     return render(request, 'knowledge/create.html', {'form': form})
 
 '''This function diplays thoughts associated with specyfic highlight.'''
+@login_required
 def notes(request, entry_id):
     highlight = HighLight.objects.get(id=entry_id)
     note = highlight.note

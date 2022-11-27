@@ -99,3 +99,4 @@ def notes(request, entry_id):
 def test(request):
 
     return render(request, 'knowledge/base.html')
+

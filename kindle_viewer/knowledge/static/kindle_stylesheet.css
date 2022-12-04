@@ -1,0 +1,68 @@
+
+
+body {
+    background-color: lightblue;
+
+    border-radius: 20px;
+
+
+}
+
+.main {
+    margin-top: 0;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+
+    gap: 3px;
+
+    border-radius: 20px;
+}
+
+.sidenav {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    rid-row-start: 1;
+    grid-row-end: span 8;
+    background-color: grey;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.info {
+    grid-column-start: 2;
+    grid-column-end: span 5;
+    rid-row-start: 1;
+    grid-row-end: span 1;
+    background-color: black;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.content {
+    grid-column-start: 2;
+    grid-column-end: span 5;
+    rid-row-start: 2;
+    grid-row-end: span 7;
+    background-color: lightblue;
+    text-align: center;
+    border-radius: 20px;
+}
+
+nav {
+    border-radius: 20px;
+}
+
+.book {
+    background-color: white;
+    border-radius: 20px;
+
+}

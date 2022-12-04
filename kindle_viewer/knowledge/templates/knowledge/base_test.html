@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,19 +8,16 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'kindle_stylesheet.css' %}">
 </head>
 <body>
 
-<div style="background-color:red">
+<div class="container">
+    <div class="header">
 
-    <form action="" method="post">
-        {csrf_token}
-        <label for="age">Age:</label>
-        <input id="age" type="text" name="age">
-        <input type="submit" value="submit">
-    </form>
+    </div>
 </div>
-
 
 </body>
 </html>

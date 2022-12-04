@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 class Document(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
     file = models.FileField()
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User,  on_delete=models.CASCADE)
 
 '''This model stores Books as titles which will be primary keys for highlights in model below '''
 class Book(models.Model):

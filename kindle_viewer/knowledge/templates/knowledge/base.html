@@ -3,11 +3,12 @@
 
 <head>
     {% load bootstrap4 %}
+    {% load static %}
 
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'kindle_stylesheet.css' %}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Notes Viewer</title>
 
@@ -18,11 +19,12 @@
 
 
 <body>
+
 <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
     <a class="navbar-brand" href="{% url 'knowledge:index' %}">Notes Viewer</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span></button>
+        <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
@@ -32,7 +34,7 @@
             <li class="nav-item">
                 <a class='nav-link' href="{% url 'knowledge:books' %}">books</a>
             </li>
-        </ul>w
+        </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 {% if user.is_authenticated %}
@@ -52,8 +54,20 @@
     </div>
 </nav>
 
-<main role="main" class="container">
-    {% block content %}{% endblock content %}
-</main>
+<div class="main">
+    <div class="sidenav">
+
+    </div>
+
+    <div class="info">
+
+    </div>
+
+    <div class="content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+</div>
+
 </body>
 </html>

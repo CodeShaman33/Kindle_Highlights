@@ -106,5 +106,5 @@ def notes(request, entry_id):
 '''test function to  render test page'''
 def test(request):
 
-    return render(request, 'knowledge/base.html')
+    return render(request, 'knowledge/base_test.html')
 

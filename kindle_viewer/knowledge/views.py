@@ -10,6 +10,9 @@ from .forms import NoteForm
 '''decorators'''
 from django.contrib.auth.decorators import login_required
 
+from django.contrib.auth.models import User
+
+
 # Create your views here.
 
 '''homepage'''
@@ -25,7 +28,8 @@ def upload(request):
         fs = FileSystemStorage()
         name = fs.save(file.name, file)
         context['url'] = fs.url(name)
-        document = Document.objects.create(name=file.name, file=file)
+        document = Document.objects.create(name=file.name, file=file, owner = request.user)
+        document.owner = request.user
     return render(request, 'knowledge/upload.html', context)
 
 '''Functionality below uses last uploaded kindle document, stored by user in database to create 
@@ -42,7 +46,7 @@ def process(request):
 
     for key in content_list[0]:
         if not Book.objects.filter(title=str(key)).exists():
-            book = Book.objects.create(title=str(key))
+            book = Book.objects.create(title=str(key), owner=request.user)
             book.save()
 
     '''every key in function below is individual book title, and for that key the function assigns new highlights, 
@@ -61,7 +65,7 @@ def process(request):
 '''This function displays all books in database as interactive elements'''
 @login_required
 def books(request):
-    books = Book.objects.all()
+    books = Book.objects.filter(owner=request.user)
     context = {'books': books}
     return render(request, 'knowledge/books.html', context)
 
@@ -106,5 +110,5 @@ def notes(request, entry_id):
 '''test function to  render test page'''
 def test(request):
 
-    return render(request, 'knowledge/base_test.html')
+    return render(request, 'knowledge/base.html')
 

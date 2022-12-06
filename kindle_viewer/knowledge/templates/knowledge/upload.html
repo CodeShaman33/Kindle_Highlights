@@ -6,13 +6,22 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .custom-file-upload{
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+                }
+    </style>
 </head>
 <body>
 <div>
     <form method="post", enctype="multipart/form-data">
         {% csrf_token %}
+        <label for="file-upload" class="custom-file-upload">UPLOAD</label>
         <input type="file" name="file">
-        <button type="submit">Upload File</button>
+        <button type="submit" id="file-upload">Upload File</button>
     </form>
 
     {% if url %}

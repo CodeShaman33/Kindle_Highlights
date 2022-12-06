@@ -61,8 +61,24 @@ nav {
     border-radius: 20px;
 }
 
-.book {
-    background-color: white;
-    border-radius: 20px;
 
+
+}
+
+book-container {
+    margin-top: 50px;
+    margin-down: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+
+}
+
+.book-link {
+    text-align: center;
+    font-size: 40px;
+}
+
+.book {
+    padding: 5 5 5 5; border-radius: 20px; background-color:white;
 }

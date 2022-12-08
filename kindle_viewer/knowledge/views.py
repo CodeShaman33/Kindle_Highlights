@@ -30,7 +30,7 @@ def upload(request):
         context['url'] = fs.url(name)
         document = Document.objects.create(name=file.name, file=file, owner = request.user)
         document.owner = request.user
-    return render(request, 'knowledge/upload.html', context)
+    return render(request, 'knowledge/upload_new_version.html', context)
 
 '''Functionality below uses last uploaded kindle document, stored by user in database to create 
 various items in tables:
@@ -67,6 +67,7 @@ def process(request):
 def books(request):
     books = Book.objects.filter(owner=request.user)
     context = {'books': books}
+    print(books)
     return render(request, 'knowledge/books.html', context)
 
 '''this function create a page with all highlight associated with book user choosed'''

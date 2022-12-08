@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+            position: relative;
+            border-radius: 20px;
+
+        }
+
+        #outer {
+            position: fixed;
+            top: 15%;
+            left: 33%;
+            width: 40%;
+            height: 70%;
+            background-color: blue;
+            border: 10px solid black;
+            border-radius: 100px;
+
+        }
+
+        #inner {
+            position: relative;
+            width: 37%;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 31%;
+            padding: 10px;
+            background-color: grey;
+            font-size: 30px;
+            border-radius: 44px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <div>
+    <form method="post", enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file-upload" class="custom-file-upload">UPLOAD</label>
+        <input type="file" name="file">
+        <button type="submit" id="file-upload">Upload File</button>
+    </form>
+
+    {% if url %}
+    <p>Uploaded file: <a href="{{ url }}">{{ url }}</a></p>
+    <div>
+        <p>
+            <a href="{% url 'knowledge:process' %}">
+                PROCESS NOTES
+            </a>
+        </p>
+    </div>
+    {% endif %}
+
+</div>
+        </div>
+    </div>
+</body>
+</html>

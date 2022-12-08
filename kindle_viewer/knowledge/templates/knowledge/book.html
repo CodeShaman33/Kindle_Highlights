@@ -11,9 +11,12 @@
     {% for entry in entries %}
     <div style="padding: 5 5 5 5; border-radius: 20px; background-color:white;">
         <h3> {{ entry.date_added }}</h3>
-        <p>{{ entry|linebreaks }}</p>
-        <h2>
-        </h2>
+        <div class="note">
+            <hr>
+            <p>{{ entry|linebreaks }}</p>
+            <hr>
+        </div>
+
         <p>
             <a href="{% url 'knowledge:create' entry.id %}">Add your thought</a>
             </br>

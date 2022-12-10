@@ -9,7 +9,8 @@ from .processing_data import processing_data
 from .forms import NoteForm
 '''decorators'''
 from django.contrib.auth.decorators import login_required
-
+'''for random notes on index page'''
+import random
 from django.contrib.auth.models import User
 
 
@@ -17,7 +18,10 @@ from django.contrib.auth.models import User
 
 '''homepage'''
 def index(request):
-    return render(request, 'knowledge/index.html')
+    last_ten = Book.objects.all().order_by('-id')[:4]
+    highlights = list(HighLight.objects.all())
+    random_5_highlights = random.sample(highlights, 5)
+    return render(request, 'knowledge/index.html', {'books': last_ten, 'highlights': 'test note 1'})
 
 '''this is a page where user can upload individual kindle file'''
 @login_required

@@ -5,15 +5,60 @@
 
 <div class="main">
     <div class="sidenav">
+        <strong>
+            Books:
+            <br>
+        </strong>
+
+        {% for book in books %}
+        <a href="{% url 'knowledge:book' book.id %}">- {{ book }}</a>
+        <br>
+        <hr style="background-color:white;">
+
+        {% empty %}
+        <strong>
+            log in and add a file to see your book list here !
+        </strong>
+        {% endfor %}
 
     </div>
 
     <div class="info">
-
+        Welcome to <span id="Kindle"><strong>Highlight Viewer</strong></span> !
+        <br>
+        <span id="info1">This app gives your comfortable acces to all your knowledge, you wont forget !</span>
     </div>
 
     <div class="content">
+        <div id="inside-content">
+            <div id="note1">
+                <img src="static/kindle.jpg" alt="kindle app art">
+            </div>
 
+            <div id="note2">
+                {{ highlights }}
+            </div>
+
+            <div id="note3">
+                note3
+            </div>
+
+            <div id="note4">
+                note4
+            </div>
+
+            <div id="note5">
+                note5
+            </div>
+
+            <div id="note6">
+                note6
+            </div>
+
+            <div id="footer">
+                footer
+            </div>
+        </div>
     </div>
 </div>
 

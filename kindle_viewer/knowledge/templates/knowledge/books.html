@@ -6,17 +6,12 @@
 <div>
     {% for book in books %}
 
-    <div class="book-link"
-        style="font-size:30px;
-                text-align:center;
-                background-color:lightgrey;
-                margin-left:40px;
-                margin-right:40px;
-                border-radius: 20px;">
+    <div class="book-link">
         <p >
             <a href="{% url 'knowledge:book' book.id %}">{{ book }}</a>
         </p>
     </div>
+    <hr style=" width: auto; height: 3px;">
     {% empty %}
         <h3>
             No books have been added !

@@ -37,8 +37,8 @@ body {
     margin-right: 20px;
 
     text-align: center;
-    font-size: 22px;
-    padding: 11px;
+    font-size: 11px;
+    padding: 22px;
     color: white;
 }
 
@@ -171,11 +171,23 @@ book-container {
     margin-right: 50px;
 
 
+
 }
 
 .book-link {
-    text-align: center;
-    font-size: 40px;
+    font-size:30px;
+    text-align:center;
+    background-color:lightgrey;
+    margin-left:40px;
+    margin-right:40px;
+    border-radius: 20px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 30px;
+    padding-right: 60px;
+    margin-right: 200px;
+    margin-bottom: 20px;
+    border: 1px solid blue;
 }
 
 .book {

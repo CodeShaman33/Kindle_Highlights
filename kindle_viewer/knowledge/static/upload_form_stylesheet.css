@@ -1,0 +1,74 @@
+
+
+.main-form-container {
+    width: auto;
+    height: 100vh;
+
+   background-color: lightblue;
+   margin-right: 400px;
+   margin-top: 55px;
+   margin-left: 55px;
+   margin-bottom: 600px;
+   border-radius: 45px;
+   border: dotted 5px black;
+
+}
+
+.form-info {
+    text-align: center;
+    font-size: 35px;
+    color: black;
+    padding: 30px;
+    border-radius: 25px;
+    border: solid grey 2px;
+    margin: 30px;
+
+}
+
+.form-section {
+    text-align: center;
+    font-size: 30px;
+    padding: 30px;
+    border-radius: 25px;
+    border: solid grey 2px;
+    margin: 20px;
+
+}
+
+#file-upload-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 15px;
+}
+
+#input-area {
+
+}
+
+.process-notes {
+    text-align: center;
+    font-size: 30px;
+    padding: 30px;
+    border-radius: 25px;
+    border: solid grey 2px;
+    margin: 20px;
+}
+
+#process-button {
+    background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 15px;
+      margin-top: 40px;
+}

@@ -34,7 +34,7 @@ def upload(request):
         context['url'] = fs.url(name)
         document = Document.objects.create(name=file.name, file=file, owner = request.user)
         document.owner = request.user
-    return render(request, 'knowledge/upload_new_version.html', context)
+    return render(request, 'knowledge/upload_new_version_2.html', context)
 
 '''Functionality below uses last uploaded kindle document, stored by user in database to create 
 various items in tables:

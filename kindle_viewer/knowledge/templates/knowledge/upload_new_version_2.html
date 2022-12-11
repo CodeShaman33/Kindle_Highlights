@@ -1,0 +1,42 @@
+
+{% extends "knowledge/base.html" %}
+
+{% block content %}
+
+<div class="main-form-container">
+  <div class="form-info">
+    Upload file with your <strong>Kindle</strong> clippings here !
+    <br>
+    <span style="font-style: italic; font-size: 19px;">
+      You can find it in "My Documents" catalogue inside the device.
+    </span>
+  </div>
+  <hr>
+  <div class="form-section">
+    <form method="post", enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file" id="input-area">
+        <button type="submit" id="file-upload-button">Upload File</button>
+    </form>
+
+      <hr>
+
+     {% if url %}
+      <div class="process-notes">
+          Uploaded file: <a href="{{ url }}">{{ url }}</a>
+          <br>
+          <form action="{% url 'knowledge:process' %}">
+              <input type="hidden" value="process notes" style>
+              <button type="submit" id="process-button">process notes</button>
+          </form>
+
+      </div>
+
+      {% endif %}
+  </div>
+</div>
+
+{% endblock content %}
+
+
+

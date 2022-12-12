@@ -30,6 +30,9 @@
     </div>
 
     <div class="content">
+
+        {% if user.is_authenticated %}
+
         <div id="inside-content">
             <div id="note1">
                 <img src="static/kindle.jpg" alt="kindle app art">
@@ -60,6 +63,9 @@
             </div>
         </div>
     </div>
+
+    {%  endif %}
+
 </div>
 
 

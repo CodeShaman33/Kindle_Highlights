@@ -13,6 +13,7 @@ from django.contrib.auth.decorators import login_required
 import random
 from django.contrib.auth.models import User
 
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
@@ -116,4 +117,13 @@ def notes(request, entry_id):
 def test(request):
 
     return render(request, 'knowledge/base.html')
+
+def book_delete(request, book_id):
+    book = Book.objects.get(id=book_id)
+
+    if request.method == 'POST':
+        book.delete()
+        return redirect('/books/')
+
+    return render(request, 'book_delete.html', {'book': book})
 

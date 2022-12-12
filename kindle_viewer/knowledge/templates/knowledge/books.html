@@ -10,7 +10,14 @@
         <p >
             <a href="{% url 'knowledge:book' book.id %}">{{ book }}</a>
         </p>
+
     </div>
+    <a href="{% url 'knowledge:book_delete' book.id %}">
+       <div class="book-delete">
+        delete book
+    </div>
+    </a>
+
     <hr style=" width: auto; height: 3px;">
     {% empty %}
         <h3>

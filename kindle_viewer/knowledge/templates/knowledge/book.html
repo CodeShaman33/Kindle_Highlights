@@ -21,13 +21,21 @@
             <p>
             <a href="{% url 'knowledge:create' entry.id %}">Add your thought</a>
             </br>
-            <a href="{% url 'knowledge:notes' entry.id %}">See your Thoughts</a>
+            <button type="button" onclick="userNote()">See your thoughts</button>
         </p>
         </div>
+
+        <div class="thought" id="demo">
+            {{ entry.thought }}
+        </div>
+
+
 
     </div>
     {% endfor %}
 </div>
+
+
 {% endblock content %}
 
 

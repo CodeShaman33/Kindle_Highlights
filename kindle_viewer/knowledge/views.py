@@ -123,7 +123,9 @@ def book_delete(request, book_id):
 
     if request.method == 'POST':
         book.delete()
+
         return redirect('/books/')
 
-    return render(request, 'book_delete.html', {'book': book})
+
+    return render(request, 'knowledge/book_delete.html', {'book': book})
 

@@ -3,7 +3,8 @@
 
 {% block content %}
 
-<form action="{% url 'users:login' %}" method="post">
+<div id="login-temp">
+    <form action="{% url 'users:login' %}" method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
     {% buttons %}
@@ -12,6 +13,9 @@
     <input type="hidden" name="next"
            value="{% url 'knowledge:index' %}">
 </form>
+</div>
+
+
 
 
 {% endblock content %}

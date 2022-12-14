@@ -2,15 +2,18 @@
 
 {% block content %}
 
-<form action="{% url 'users:register' %}" method="post">
+<div id="login-temp">
+    <form action="{% url 'users:register' %}" method="post">
     {% csrf_token %}
     {{ form }}
 
-    <button name="submit">
+    <button name="submit" id="file-upload-button">
     Register
     </button>
     <input type="hidden" name="next" value="{% url 'knowledge:index' %}">
 
 </form>
+</div>
+
 
 {% endblock content %}

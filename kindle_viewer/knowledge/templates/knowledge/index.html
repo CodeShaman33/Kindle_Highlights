@@ -4,22 +4,31 @@
 
 
 <div class="main">
+
+
     <div class="sidenav">
+        {% if user.is_authenticated %}
         <strong>
             Books:
             <br>
         </strong>
 
         {% for book in books %}
-        <a href="{% url 'knowledge:book' book.id %}">- {{ book }}</a>
+        <div id="book-link-index">
+            <a href="{% url 'knowledge:book' book.id %}"  id="book-link-index-a">- {{ book }}</a>
+        </div>
         <br>
         <hr style="background-color:white;">
 
         {% empty %}
-        <strong>
+
+        {% endfor %}
+
+        {% else %}
+        <strong style="font-size: 30px;">
             log in and add a file to see your book list here !
         </strong>
-        {% endfor %}
+        {% endif %}
 
     </div>
 

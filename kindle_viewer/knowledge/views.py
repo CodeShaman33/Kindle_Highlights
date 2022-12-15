@@ -14,6 +14,7 @@ import random
 from django.contrib.auth.models import User
 
 from django.shortcuts import get_object_or_404
+'''for test version (for users that dont want to register but have inspection of the page functionality)'''
 
 # Create your views here.
 

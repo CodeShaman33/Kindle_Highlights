@@ -34,3 +34,22 @@ class HighLight(models.Model):
     def __str__(self):
         return self.note
 
+'''this model will contain some sample data for unregister users that want to check how the webapp works
+    the data will be added by admin with django admin panel'''
+
+class sampleBook(models.Model):
+    title = models.CharField(max_length=100, null=True)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
+
+class sampleHighlight(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    note = models.TextField()
+    date_added = models.TextField()
+    thought = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.note
+

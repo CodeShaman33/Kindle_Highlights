@@ -130,3 +130,15 @@ def book_delete(request, book_id):
 
     return render(request, 'knowledge/book_delete.html', {'book': book})
 
+
+'''sample version below '''
+
+def sampleIndex(request):
+    return render(request, 'knowledge/sample/index.html')
+
+def sampleBooks(request):
+    return render(request, 'knowledge/sample/books.html')
+
+def sampleBook(request):
+    return render(request, 'knowledge/sample/book.html')
+

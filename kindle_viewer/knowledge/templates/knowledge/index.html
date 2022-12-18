@@ -11,6 +11,7 @@
         <strong>
             Books:
             <br>
+            <br>
         </strong>
 
         {% for book in books %}
@@ -73,6 +74,17 @@
         </div>
     </div>
 
+    {% else %}
+    <img src="" alt="screens of logged in version" id="photos">
+
+    <script>
+        let image = document.getElementById('photos');
+        let images = ['static/screens/screen1.jpg','static/screens/screen2.jpg','static/screens/screen3.jpg','static/screens/screen4.jpg']
+        setInterval(function(){
+            let random = Math.floor(Math.random() * 4);
+            image.src = images[random];
+        }, 2000);
+    </script>
     {%  endif %}
 
 </div>

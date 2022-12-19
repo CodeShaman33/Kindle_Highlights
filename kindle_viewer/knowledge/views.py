@@ -23,7 +23,7 @@ def index(request):
     last_ten = Book.objects.all().order_by('-id')[:4]
     highlights = list(HighLight.objects.all())
     random_5_highlights = random.sample(highlights, 5)
-    return render(request, 'knowledge/index.html', {'books': last_ten, 'highlights': 'test note 1'})
+    return render(request, 'knowledge/index_test.html', {'books': last_ten, 'highlights': 'test note 1'})
 
 '''this is a page where user can upload individual kindle file'''
 @login_required

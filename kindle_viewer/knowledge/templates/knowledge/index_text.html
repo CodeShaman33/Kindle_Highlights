@@ -1,0 +1,127 @@
+{% extends "knowledge/base.html" %}
+
+{% block content %}
+
+
+<div class="main">
+
+
+    <div class="sidenav">
+        {% if user.is_authenticated %}
+        <strong>
+            Books:
+            <br>
+            <br>
+        </strong>
+
+        {% for book in books %}
+        <div id="book-link-index">
+            <a href="{% url 'knowledge:book' book.id %}"  id="book-link-index-a">- {{ book }}</a>
+        </div>
+        <br>
+        <hr style="background-color:white;">
+
+        {% empty %}
+
+        {% endfor %}
+
+        {% else %}
+        <strong style="font-size: 30px;">
+            log in and add a file to see your book list here !
+        </strong>
+        {% endif %}
+
+    </div>
+
+    <div class="info">
+        Welcome to <span id="Kindle"><strong>Highlight Viewer</strong></span> !
+        <br>
+        <span id="info1">This app gives you easy acces to all your knowledge, you won't forget !</span>
+    </div>
+
+    <div class="content">
+
+        {% if user.is_authenticated %}
+
+        <div id="inside-content">
+            <div id="note1">
+                <img src="static/kindle.jpg" alt="kindle app art">
+            </div>
+
+            <div id="note2">
+                {{ highlights }}
+            </div>
+
+            <div id="note3">
+                note3
+            </div>
+
+            <div id="note4">
+                note4
+            </div>
+
+            <div id="note5">
+                note5
+            </div>
+
+            <div id="note6">
+                note6
+            </div>
+
+            <div id="footer">
+                footer
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+
+    <script>
+        document.getElementsByClassName('content').style.display = flex;
+        document.getElementsByClassName('content').style.justify-content = center;
+
+    </script>
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+
+            <div class="slide-first">
+                <img src="static/screens/screen1.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="static/screens/screen2.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="static/screens/screen3.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="static/screens/screen4.jpg" alt="">
+            </div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+        </div>
+
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+
+    </div>
+
+    {%  endif %}
+
+</div>
+
+
+
+{% endblock content %}

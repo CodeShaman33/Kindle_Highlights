@@ -23,7 +23,7 @@ def index(request):
     last_ten = Book.objects.all().order_by('-id')[:4]
     highlights = list(HighLight.objects.all())
     random_5_highlights = random.sample(highlights, 5)
-    return render(request, 'knowledge/index_text.html', {'books': last_ten, 'highlights': 'test note 1'})
+    return render(request, 'knowledge/index_ver2.html', {'books': last_ten, 'highlights': 'test note 1'})
 
 '''this is a page where user can upload individual kindle file'''
 @login_required
@@ -74,7 +74,7 @@ def books(request):
     books = Book.objects.filter(owner=request.user)
     context = {'books': books}
     print(books)
-    return render(request, 'knowledge/books.html', context)
+    return render(request, 'knowledge/books_ver2.html', context)
 
 '''this function create a page with all highlight associated with book user choosed'''
 @login_required
@@ -82,7 +82,7 @@ def book(request, book_id):
     book = Book.objects.get(id=book_id)
     entries = HighLight.objects.filter(book=book)
     context = {'book_name': book.title, 'entries': entries}
-    return render(request, 'knowledge//book.html', context)
+    return render(request, 'knowledge//book_ver2.html', context)
 
 
 

@@ -1,0 +1,98 @@
+:root {
+    --color-dark: #4a086e;
+    --color-light: #1ab9c4;
+}
+
+#show-form * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#show-form body {
+    background: var(--color-light);
+    background: linear-gradient(to top right, var(--color-light), var(--color-dark));
+    height: 100vh;
+    width: 100vw;
+    font-family: Helvetica, sans-serif;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#show-form form {
+    max-width: 300px;
+    padding: 66px 44px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 21px 22px 60px 15px rgba(66, 68, 90, 1);
+    background-color: rgba(120, 210, 223, 1);
+    background-image: radial-gradient(circle, rgba(120, 210, 223, 0.1) 22%, rgb(29, 83, 128) 87%);
+}
+
+#show-form .form__input-container {
+    position: relative;
+    margin-bottom: 32px;
+
+}
+
+#show-form input,
+button {
+    border: none;
+    border-radius: 20px;
+    font-size: 23;
+    padding: 22px 24px;
+    transition: box-shadow 0.3s, outline 0.3s;
+    background-image: radial-gradient(circle, rgba(74, 147, 158, 0.637) 22%, rgba(18, 109, 112, 0.6) 87%);
+
+}
+
+#show-form button {
+    background-color: rgb(18, 206, 49);
+    padding: 22px 33px;
+    color: #ddf4f2;
+    font-size: 24px;
+    cursor: pointer;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#show-form input {
+    width: 100%;
+}
+
+#show-form label {
+    color: #ddf4f2;
+    position: absolute;
+    left: 14px;
+    opacity: 0.4;
+    font-style: italic;
+    font-size: 25px;
+    cursor: text;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: left 0.3s, opacity 0.3s;
+}
+
+#show-form input:focus+label,
+input:not(:placeholder-shown)+label {
+    left: 150px;
+    opacity: 0;
+}
+
+#show-form input:not(:placeholder-shown)+label {
+    left: 150px;
+    opacity: 0;
+}
+
+#show-form input:hover,
+button:hover {
+    box-shadow: 10px 10px 40px 0px rgba(8, 83, 87, 0.85);
+    -webkit-box-shadow: 10px 10px 40px 0px rgba(8, 83, 87, 0.85);
+    -moz-box-shadow: 10px 10px 40px 0px rgba(8, 83, 87, 0.85);
+}
+
+#show-form input:focus,
+button:focus {
+    outline: solid 3px white;
+}

@@ -1,0 +1,36 @@
+
+
+{% extends "knowledge/base_ver2.html" %}
+
+{% block content %}
+
+<div class="title">
+    {{ book_name }}
+</div>
+
+{% for entry in entries %}
+
+<div class="note">
+    <div class="date">
+        {{ entry.date_added }}
+    </div>
+
+    <hr>
+
+    <div class="note-text">
+        {{ entry|linebreaks }}
+    </div>
+
+    <hr>
+
+    <div class="note-features">
+
+    </div>
+</div>
+
+{% empty %}
+<h2>No notes yet !</h2>
+
+{% endfor %}
+
+{% endblock content %}

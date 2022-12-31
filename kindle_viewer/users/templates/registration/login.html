@@ -1,19 +1,21 @@
-{% extends "knowledge/base.html" %}
+{% extends "knowledge/base_ver2.html" %}
 {% load bootstrap4 %}
 
 {% block content %}
 
-<div id="login-temp">
+<div id="show-form">
     <form action="{% url 'users:login' %}" method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
     {% buttons %}
-    <button name="submit" class="btn btn-primary">Login</button>
+    <button name="submit" >Login</button>
     {% endbuttons %}
     <input type="hidden" name="next"
            value="{% url 'knowledge:index' %}">
 </form>
 </div>
+
+
 
 
 

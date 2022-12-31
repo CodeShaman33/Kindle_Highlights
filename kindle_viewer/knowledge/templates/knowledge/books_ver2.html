@@ -1,0 +1,40 @@
+{% extends "knowledge/base_ver2.html" %}
+
+
+
+{% block content %}
+
+    {% for book in books %}
+    <ol>
+        <li>
+            <a href="{% url 'knowledge:book' book.id %}">
+                <div class="book">
+
+                <div>
+                    {{ book }}
+                </div>
+
+                <div class="book-delete">
+                delete
+
+                </div>
+            </a>
+
+        </li>
+        <hr>
+    </ol>
+
+
+    {% empty %}
+        <h3>
+            No books have been added !
+        </h3>
+    {% endfor %}
+
+
+
+
+{% endblock content %}
+
+
+

@@ -7,10 +7,10 @@
     {% for book in books %}
     <ol>
         <li>
-            <a href="{% url 'knowledge:book' book.id %}">
+            <a href="{% url 'knowledge:book' book.id %}" id="book-link">
                 <div class="book">
 
-                <div>
+                <div style="margin-right: 40px;">
                     {{ book }}
                 </div>
 

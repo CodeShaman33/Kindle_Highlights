@@ -22,14 +22,22 @@
 
     <div class="navigation">
         <div class="dropdown">
-            <a href="#">Link1</a>
+            <a href="{% url 'knowledge:index' %}">Notes Viewer</a>
         </div>
-        <a href="#">Link2</a>
-        <a href="#">Link3</a>
+        <a href="{% url 'knowledge:index' %}"><strong>Notes Viewer</strong></a>
+        <a href="{% url 'knowledge:books' %}">Books</a>
 
-        <a href="#" id="log" style="margin-right:30px;">Link3</a>
-        <a href="#" id="log">Link3</a>
+        {% if user.is_authenticated %}
 
+        <a href="{% url 'users:logout' %}" id="log" style="margin-right:30px;">Log out</a>
+        <a href="#" id="log">Hello, {{ user.username }}.</a>
+
+        {% else %}
+
+        <a href="{% url 'users:register' %}" id="log" style="margin-right:30px;">Register</a>
+        <a href="{% url 'users:login' %}" id="log">Log </a>
+
+        {% endif %}
     </div>
 
     <div class="content">

@@ -1,9 +1,9 @@
-{% extends "knowledge/base_ver2.html" %}
+{% extends "knowledge/base.html" %}
 {% load bootstrap4 %}
 
 {% block content %}
 
-<div id="show-form">
+<div id="login-temp">
     <form action="{% url 'users:login' %}" method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
